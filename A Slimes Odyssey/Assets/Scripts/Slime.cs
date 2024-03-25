@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Slime : MonoBehaviour
 {
-
+    [Header ("Basic Necessities")]
     Vector2 respawn;
 
     [Header ("Movement")]
@@ -23,6 +23,8 @@ public class Slime : MonoBehaviour
 
     [Header ("Death")]
     [SerializeField] Collider2D deathCollider;
+    [SerializeField] HealthHandler healthHandler;
+    [SerializeField] GameOver gameOver;
     
 
     // Start is called before the first frame update
@@ -89,6 +91,11 @@ public class Slime : MonoBehaviour
 
     public void Death() 
     {
+        healthHandler.Damage(1);
+        if(healthHandler.CheckHealth() < 1f)
+        {
+            gameOver.GameOverScene();
+        }
         activity = false;
         deathCollider.enabled = false;
         StartCoroutine(Respawn());

@@ -8,6 +8,7 @@ public class MainMenuHandler : MonoBehaviour
 
 public GameObject openSettings;
 
+[SerializeField] ScreenFader screenFader;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public GameObject openSettings;
     //This method ties the OnClick event handler to the "Start" button to start the game
     public void Play()  
     {
-        SceneManager.LoadScene("Game");
+        screenFader.FadeToColor("Game");
     }
 
     //Opens up the settings panel
