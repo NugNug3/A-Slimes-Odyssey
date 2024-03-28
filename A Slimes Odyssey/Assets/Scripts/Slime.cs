@@ -77,14 +77,13 @@ public class Slime : MonoBehaviour
 
     public void Jump()
     {
-        foreach(AnimationStateChanger asc in animationStatechangers)
-        {
-            asc.ChangeAnimationState("Jump");
-        }
-
         if(Physics2D.OverlapCircleAll(transform.position, 2f, groundLayer).Length > 0)
         {
             rigidBody.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+            foreach(AnimationStateChanger asc in animationStatechangers)
+            {
+                asc.ChangeAnimationState("Jump");
+            }
 
         }
     }
