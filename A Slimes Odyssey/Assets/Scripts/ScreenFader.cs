@@ -14,12 +14,6 @@ public class ScreenFader : MonoBehaviour
         FadeToClear();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void FadeToClear()
     {
         fader.color = fadeColor;
