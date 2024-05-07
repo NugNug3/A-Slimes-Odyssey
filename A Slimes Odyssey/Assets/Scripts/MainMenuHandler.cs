@@ -24,7 +24,7 @@ public GameObject openSettings;
     //This method ties the OnClick event handler to the "Start" button to start the game
     public void Play()  
     {
-        screenFader.FadeToColor("Game");
+        screenFader.FadeToColor("Level1");
     }
 
     //Opens up the settings panel

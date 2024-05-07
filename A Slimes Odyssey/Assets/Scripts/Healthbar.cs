@@ -13,12 +13,12 @@ public class Healthbar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        totalHealthbar.fillAmount = slimeHealth.currentHealth / 3;
+        totalHealthbar.fillAmount = slimeHealth.currentHealth / 6;
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentHealthbar.fillAmount = slimeHealth.currentHealth / 3;
+        currentHealthbar.fillAmount = slimeHealth.currentHealth / 6;
     }
 }

@@ -2,27 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 public class GameRestartHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] TextMeshProUGUI highscore;
+    [SerializeField] ScreenFader screenFader;
+
     void Start()
     {
-        
+        highscore.text = CoinCounter.finalCoinSingletonValue;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PlayAgain()
     {
-        SceneManager.LoadScene("Game");
+        screenFader.FadeToColor("Level1");
     }
 
     public void Cowardice()
     {
-        Application.Quit();
+        screenFader.FadeToColor("MainMenu");
     }
 }
